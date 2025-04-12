@@ -1,32 +1,33 @@
-import React from 'react'
-import TextBars from './TextBars'
+import React from 'react';
 
-function expenseDisplay(props) {
+function ExpenseDisplay({ submissions }) {
+  const expenseRows = submissions.map((submission) => (
+    <tr key={submission.id}>
+      <td>{submission.name}</td>
+      <td>{submission.description}</td>
+      <td>{submission.category}</td>
+      <td>{submission.amount}</td>
+      <td>{submission.date}</td>
+    </tr>
+  ));
 
   return (
     <div>
       <table>
-        <thead class="table-head">
-         <tr>    
+        <thead className="table-head">
+          <tr>
             <th>Expense</th>
             <th>Description</th>
             <th>Category</th>
-            <th>Price</th>
+            <th>Amount</th>
             <th>Date</th>
           </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>{submission.name}</td>
-                <td>{expense.description}</td>
-                <td>{expense.category}</td>
-                <td>{expense.price}</td>
-                <td>{expense.Date}</td>
-            </tr>
-        </tbody>
+        <tbody>{expenseRows}</tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default expenseDisplay
+export default ExpenseDisplay;
+

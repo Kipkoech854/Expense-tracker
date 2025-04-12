@@ -1,14 +1,12 @@
-import React from 'react'
-import TextBars from './TextBars'
+import React from 'react';
+import TextBars from './TextBars';
 
-function addExpenseContainer() {
+function AddExpenseContainer({ onAddSubmission }) {
   return (
     <div>
-      <h4>Add Expense</h4>
-      <p>Enter your expense details below</p>
-      <TextBars/>
+      <TextBars onAddSubmission={onAddSubmission} />
     </div>
-  )
+  );
 }
 
-export default addExpenseContainer
+export default AddExpenseContainer;
