@@ -1,5 +1,6 @@
 import React from 'react';
 import DeleteButton from './DeleteButton';
+import './App.css'
 
 function ExpenseDisplay({ submissions, handleDelete}) {
   const expenseRows = submissions.map((submission) => (
@@ -13,7 +14,7 @@ function ExpenseDisplay({ submissions, handleDelete}) {
 
     </tr>
   ));
-  function grandTotal(submissions) {
+  /*function grandTotal(submissions) {
     function getPrices(submissions) {
       return submissions.map((entry) => Number(entry.price ));
     }
@@ -23,10 +24,10 @@ function ExpenseDisplay({ submissions, handleDelete}) {
   
     return total;
   }
-  const totalPrice = grandTotal(submissions)
+  const totalPrice = grandTotal(submissions)*/
   
   return (
-    <div>
+    <div id="display-table">
       <table>
         <thead className="table-head">
           <tr>
@@ -37,13 +38,10 @@ function ExpenseDisplay({ submissions, handleDelete}) {
             <th>Date</th>
           </tr>
         </thead>
-        <tbody>{expenseRows}
-            
+        <tbody>
+            {expenseRows}
         </tbody>
       </table>
-      <div id ="total">
-        {totalPrice}
-      </div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import './App.css'
 import React, { useState } from 'react';
 import Header from './Header';
 import AddExpenseContainer from './addExpenseContainer';
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header submissions={submissions} />
       <AddExpenseContainer onAddSubmission={handleAddSubmission} />
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <ExpenseDisplay submissions={searchTerm ? filteredSubmissions : submissions} handleDelete={handleDelete} />

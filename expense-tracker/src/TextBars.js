@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import './App.css'
 
 function TextBars({onAddSubmission}) {
   const [formData, setFormData] = useState({
@@ -30,7 +31,8 @@ function TextBars({onAddSubmission}) {
   }
 
   return (
-    <div>
+    <div id="text-bars">
+      <p>Add Expense</p>
       <input type="text" name="name" value={formData.name} placeholder="Enter expense name" onChange={handleChange} />
       <input type="text" name="description" value={formData.description} placeholder="Enter expense description" onChange={handleChange} />
       <input type="text" name="category" value={formData.category} placeholder="Enter expense category" onChange={handleChange} />
